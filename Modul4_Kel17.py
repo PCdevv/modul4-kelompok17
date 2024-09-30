@@ -7,3 +7,9 @@ def tampilkan_buku():
     for buku in buku_tersedia:
         print(f"- {buku}")
     print()  # Spasi kosong untuk memperindah tampilan
+
+# Function untuk menambahkan buku baru ke dalam daftar (Return type tanpa parameter)
+def tambah_buku():
+    buku_baru = input("Masukkan judul buku yang ingin ditambahkan: ")
+    buku_tersedia.append(buku_baru)
+    return buku_baru
