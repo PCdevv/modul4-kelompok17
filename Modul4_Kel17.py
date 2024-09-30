@@ -37,3 +37,39 @@ class Perpustakaan:
             return f"Buku '{judul_buku}' telah dikembalikan oleh {self.nama_anggota}.\n"
         else:
             return f"{self.nama_anggota} tidak meminjam buku berjudul '{judul_buku}'.\n"
+        
+# Function untuk menjalankan perpustakaan
+def jalankan_perpustakaan():
+    anggota = input("Masukkan nama anggota: ")
+    perpustakaan = Perpustakaan(anggota)
+
+    while True:
+        print("=== Menu Perpustakaan ===")
+        print("1. Tampilkan Buku Tersedia")
+        print("2. Tambah Buku")
+        print("3. Pinjam Buku")
+        print("4. Kembalikan Buku")
+        print("5. Keluar")
+
+        pilihan = input("Pilih opsi (1-5): ")
+
+        if pilihan == '1':
+            tampilkan_buku()
+        elif pilihan == '2':
+            buku_baru = tambah_buku()
+            print(f"Buku '{buku_baru}' telah ditambahkan ke perpustakaan.\n")
+        elif pilihan == '3':
+            judul_buku = input("Masukkan judul buku yang ingin dipinjam: ")
+            perpustakaan.pinjam_buku(judul_buku)
+        elif pilihan == '4':
+            judul_buku = input("Masukkan judul buku yang ingin dikembalikan: ")
+            pesan = perpustakaan.kembalikan_buku(judul_buku)
+            print(pesan)
+        elif pilihan == '5':
+            print("Terima kasih telah menggunakan perpustakaan.")
+            break
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.\n")
+
+# Jalankan program perpustakaan
+jalankan_perpustakaan()
