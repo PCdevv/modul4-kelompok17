@@ -16,7 +16,7 @@ def tambah_buku():
 
 # Method untuk meminjam buku (Non-return type)
 class Perpustakaan:
-    def _init_(self, nama_anggota):
+    def __init__(self, nama_anggota):
         self.nama_anggota = nama_anggota
         self.buku_dipinjam = []
 
